@@ -1,0 +1,51 @@
+html
+  head
+        title TWITTER
+    style
+        include style1.css
+  body
+      div.container
+        div.box
+          img.img-box(src=avatar)
+        div.menu
+          ul.ul
+            li.li Tweets
+            li.li Following
+            li.li Followers
+            li.li Likes
+        div.menu
+          ul.ul
+            li.li-data
+              a(href="https://www.twitter.com/" + screen_name) 
+                span= tweets_count
+            li.li-data
+              a(href="https://www.twitter.com/" + screen_name)
+                span= friends_count
+            li.li-data
+              a(href="https://www.twitter.com/" + screen_name)
+                span= followers_count
+            li.li-data
+              a(href="https://www.twitter.com/" + screen_name)
+                span= favourites_count
+        div.parent
+          div.mini-container
+            div.menu1
+              ul
+                li.li1 Tweets
+                li.li1 
+                  a(href="https://www.twitter.com/" + screen_name) Tweets&replies
+                li.li1
+                  a(href="https://www.twitter.com/" + screen_name) Media
+            each user in users
+              div.textparent
+                div.img
+                  img.profileavatar(src=user.avatar)
+                div.text
+                  a.text-username(href="https://www.twitter.com/" + screen_name) 
+                    span= user.name
+                  a.text-mail(href="https://www.twitter.com/" + screen_name)
+                    span= " @"
+                    span= screen_name
+                  p 
+                    span= user.tweet_text
+                hr.hr

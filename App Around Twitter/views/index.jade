@@ -1,0 +1,19 @@
+html
+    head
+        title Tweet 'n' Chat
+        link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css")
+        style
+            include style.css
+    body.body
+        div.container
+            div.head
+                h1 Tweet 'n' Chat
+                    div
+                        //- div.col-md-6.col-md-offset-3
+                        div.btn-parent
+                            form.text-center.form(action="/get_timeline", method="POST")
+                                input.btn(type="submit", value="Profile")
+                            form.text-center.form(action="/get_followers", method="POST")
+                                input.btn(type="submit", value="Followers")
+                            form.text-center.form(action="/get_friends", method="POST")
+                                input.btn(type="submit", value="Friends")

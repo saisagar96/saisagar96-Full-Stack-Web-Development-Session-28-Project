@@ -1,0 +1,42 @@
+html
+	head
+		title Twitter Friends
+		script(src="http://code.jquery.com/jquery-1.11.1.min.js")
+		link(rel="stylesheet", id="bootstrap-css", href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js")
+		style
+			include twitter-profilecard.css
+
+		body
+			div.container
+			div.row
+			h1.row Twitter Profiles
+			
+			
+			each user in users
+				div.col-md-4
+					div.twPc-div
+						a.twPc-bg.twPc-block
+
+						div
+							div.twPc-button
+							
+								a.twitter-follow-button(href="https://twitter.com/" + user.screen_name, data-show-count="false", data-size="large", data-show-screen-name="false", data-dnt="true" + "Follow @mertskaplan")
+								script(type='text/javascript')
+									!function(d,s,id) {var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs')
+
+							a.twPc-avatarLink(title= user.namae, href="https://twitter.com/" + user.screen_name)
+								img.twPc-avatarImg(alt=user.namae, src=user.avatar)
+
+							div.twPc-divUser
+								div.twPc-divName
+									a(href="https://twitter.com/" + user.screen_name)
+										span= user.name
+						
+								span
+									a(href="https://twitter.com/" + user.screen_name)
+										span="@" + user.screen_name
+								
+
+							div.twPc-divStats
+								p #{user.description}
